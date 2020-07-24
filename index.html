@@ -25,7 +25,7 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <button class="btn btn-default" id="phoneMinus"><i class="fas fa-minus"></i></button>
                            <input id="phoneIncrement" type="text" class="form-control text-center" value="1">
                            <button class="btn btn-default" id="phonePlus"><i class="fas fa-plus" ></i></button>
                         </div>
@@ -79,9 +79,10 @@
    </section>
 
    <script>
-      const phonePlus = document.getElementById("phonePlus");
-         phonePlus.addEventListener("click",function(){
-            const phoneIncrement = document.getElementById("phoneIncrement").value;
+      // phone Increment section start
+            const phonePlus = document.getElementById("phonePlus");
+            phonePlus.addEventListener("click",function(){
+            let phoneIncrement = document.getElementById("phoneIncrement").value;
             const phoneIncrementNumber = parseFloat(phoneIncrement);
 
             const totalIncrement = phoneIncrementNumber + 1;
@@ -95,6 +96,24 @@
             document.getElementById("mobilePrice").innerText = totalPrice;
 
          })
+       // phone Increment section end
+
+      //  phone decrement section start
+            const phoneMinus = document.getElementById("phoneMinus");
+               phoneMinus.addEventListener("click",function(){
+               let phoneIncrement = document.getElementById("phoneIncrement").value;
+               let phoneIncrementNumber = parseFloat(phoneIncrement);
+
+               let increment = phoneIncrementNumber - 1;
+               document.getElementById("phoneIncrement").value = increment;
+
+               const mobilePrice = document.getElementById("mobilePrice").innerText;
+               const mobilePriceNumber = parseFloat(mobilePrice);
+               const totalPrice = increment * 1219;
+               document.getElementById("mobilePrice").innerText = totalPrice;
+            })
+      //  phone decrement section end
+
    </script>
 </body>
 
