@@ -79,21 +79,22 @@
    </section>
 
    <script>
-      const phonePlusBtn = document.getElementById("phonePlus");
-      phonePlusBtn.addEventListener("click",function(){
-         const phoneIncrement = document.getElementById("phoneIncrement").value;
-         const phoneNumber = parseFloat(phoneIncrement);
-         const totalquantity = phoneNumber + 1;
-         document.getElementById("phoneIncrement").value = totalquantity;
+      const phonePlus = document.getElementById("phonePlus");
+         phonePlus.addEventListener("click",function(){
+            const phoneIncrement = document.getElementById("phoneIncrement").value;
+            const phoneIncrementNumber = parseFloat(phoneIncrement);
 
-        
-        
-        
-        
+            const totalIncrement = phoneIncrementNumber + 1;
+            document.getElementById("phoneIncrement").value = totalIncrement;
 
-         
 
-       })
+            const mobilePrice = document.getElementById("mobilePrice").innerText;
+            const mobilePriceNumber = parseFloat(mobilePrice);
+
+            const totalPrice = totalIncrement * 1219;
+            document.getElementById("mobilePrice").innerText = totalPrice;
+
+         })
    </script>
 </body>
 
