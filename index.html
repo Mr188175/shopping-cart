@@ -116,9 +116,20 @@
                    productPrice = inputNewNumber * 59;
                    }
                 document.getElementById(product + "Price").innerText = productPrice;
+                calculateTotal () ;
 }        
 
+                  function calculateTotal () {
+                     const phoneInput = document.getElementById("phoneInput");
+                     const phoneCount = parseInt(phoneInput.value);
 
+                     const caseInput = document.getElementById("caseInput");
+                     const caseCount = parseInt(caseInput.value);
+
+                     const totalPrice = phoneCount * 1219 + caseCount * 59;
+                     document.getElementById("subTotal").innerText = totalPrice;
+
+                  }
 
 
 
