@@ -27,7 +27,7 @@
                         <div class="input-group number-spinner">
                            <button class="btn btn-default" onclick="phoneEventHandler(false)"><i class="fas fa-minus"></i></button>
                            <input id="phoneInput" type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default" onclick=" phoneEventHandler(true)"><i class="fas fa-plus" ></i></button>
+                           <button class="btn btn-default" onclick="phoneEventHandler(true)"><i class="fas fa-plus" ></i></button>
                         </div>
                         <h5>$ <span id="phonePrice">1219</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
@@ -43,9 +43,9 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default" id="caseMinus"><i class="fas fa-minus"></i></button>
-                           <input id="caseIncrement" type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default" id="casePlus"><i class="fas fa-plus"></i></button>
+                           <button class="btn btn-default" onclick=" caseEventHandler(false);"><i class="fas fa-minus"></i></button>
+                           <input id="caseInput" type="text" class="form-control text-center" value="1">
+                           <button class="btn btn-default" onclick=" caseEventHandler(true);"><i class="fas fa-plus"></i></button>
 
                         </div>
                         <h5>$ <span id="casePrice">59</span></h5>
@@ -79,33 +79,58 @@
    </section>
 
    <script>
-      
-       phoneEventHandler(true);
-       phoneEventHandler(false);
-   //   const phoneInput = document.getElementById("phoneInput");
-   //   const phoneInputNumber = parseInt(phoneInput.value);
-   //   const phoneInputNewNumber = phoneInputNumber - 1;
-   //   phoneInput.value = phoneInputNewNumber;
-   //   const phonePrice = phoneInputNewNumber * 1219;
-   //   document.getElementById("phonePrice").innerText = phonePrice;
+         //   Phone Handler start
+                   phoneEventHandler(true);
 
 
-   function phoneEventHandler(isIncrease) {
-   const phoneInput = document.getElementById("phoneInput");
-   const phoneInputNumber = parseInt(phoneInput.value);
-   let phoneInputNewNumber = 0;
-   if (isIncrease == true) {
-      phoneInputNewNumber = phoneInputNumber + 1;
-   }
+                     phoneEventHandler(false);
+       
+          //   Phone Handler end 
 
-   if (isIncrease == false && phoneInputNumber > 0) {
-      phoneInputNewNumber = phoneInputNumber - 1;
-   }
-   phoneInput.value = phoneInputNewNumber;
-   const phonePrice = phoneInputNewNumber * 1219;
-   document.getElementById("phonePrice").innerText = phonePrice;
-  }
-   </script>
+          //  Case Handler start
+         
+            caseEventHandler(true);
+          
+            caseEventHandler(false);
+         
+          //  Case Handler end
+
+          // phone Common function start
+                function phoneEventHandler(isIncreasing) {
+                const phoneInput = document.getElementById("phoneInput");
+                const inputNumber = parseInt(phoneInput.value);
+                let inputNewNumber = 0;
+                if ( isIncreasing == true) {
+                   inputNewNumber = inputNumber + 1;
+                }
+
+                if (isIncreasing == false && inputNumber > 0) {
+                   inputNewNumber = inputNumber - 1;
+                }
+                phoneInput.value = inputNewNumber;
+                const totalPrice = inputNewNumber * 1219;
+                document.getElementById("phonePrice").innerText = totalPrice;
+                }
+
+               //phone Common function end
+
+               //   Case common function start
+               function caseEventHandler(isIncresing) {
+                  const caseInput =  document.getElementById("caseInput");
+                     const inputNumber = parseInt(caseInput.value);
+                     let inputNewNumber = 0;
+                     if(isIncresing == true) {
+                        inputNewNumber = inputNumber + 1;
+                     }
+                     if (isIncresing == false && inputNumber > 0) {
+                        inputNewNumber = inputNumber - 1;
+                     }
+                     caseInput.value = inputNewNumber;
+                     const casePrice = inputNewNumber * 59;
+                     document.getElementById("casePrice").innerText = casePrice;
+               }
+               //   Case common function start
+  </script>
 </body>
 
 </html>
