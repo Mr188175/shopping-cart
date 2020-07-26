@@ -66,7 +66,7 @@
                      <div class="col-md-4 status">
                         <h5 id="subTotal">$1,278</h5>
                         <h5>$ <span id="tax">0</span></h5>
-                        <h5>$ <span id="total">1,278</span></h5>
+                        <h5>$ <span id="grandTotal">1,278</span></h5>
                      </div>
                   </div>
                </div>
@@ -128,6 +128,13 @@
 
                      const totalPrice = phoneCount * 1219 + caseCount * 59;
                      document.getElementById("subTotal").innerText = totalPrice;
+
+                     const tax = Math.round(totalPrice * 0.1);
+                     document.getElementById("tax").innerText = tax;
+
+                    const totalAmount = totalPrice + tax;
+                    document.getElementById("grandTotal").innerText = totalAmount;
+                    
 
                   }
 
