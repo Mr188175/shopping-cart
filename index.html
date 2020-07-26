@@ -64,7 +64,7 @@
                      </div>
 
                      <div class="col-md-4 status">
-                        <h5>$ <span id="subTotal">1,278</span></h5>
+                        <h5 id="subTotal">$1,278</h5>
                         <h5>$ <span id="tax">0</span></h5>
                         <h5>$ <span id="total">1,278</span></h5>
                      </div>
@@ -80,18 +80,16 @@
 
    <script>
          //   Phone Handler start
-                      productEventHandler(true);
-
-
-                      productEventHandler(false);
+                      productEventHandler('phone',true);
+                      productEventHandler('phone',false);
        
           //   Phone Handler end 
 
           //  Case Handler start
          
-          productEventHandler(true);
+          productEventHandler('case',true);
           
-          productEventHandler(false);
+          productEventHandler('case',false);
          
           //  Case Handler end
 
@@ -119,6 +117,20 @@
                    }
                 document.getElementById(product + "Price").innerText = productPrice;
 }        
+
+
+
+
+
+        
+
+        
+        
+
+        
+
+        
+        
 
           // phone Common function start
 // 
